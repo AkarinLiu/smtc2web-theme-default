@@ -1,0 +1,14 @@
+name: Publish theme
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+jobs:
+  publish:
+    permissions:
+      contents: read
+      id-token: write # 必需：用于获取 GitHub Actions OIDC Token
+    uses: smtc2web/theme-upload/.github/workflows/publish.yml@v1
